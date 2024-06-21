@@ -1,0 +1,5 @@
+,Factuurnr.,Naam,Deb.nr.,Omschrijving factuur,Boekstuk,Vervalt,Factuur,Saldo,Factuurreferentie,Aanmaningen,Vervaldagen,Factuur Gbl.,Aut. bet./inc.,IBAN-nr.,Incassomachtiging vereist,Dossier,Betaaltermijnen,Betaalwijze,Factuurstatus
+0,12300139,3332 Demo,3332,Geriatrische Revalidatie Zorg,2024-01-23,2024-02-06,25717.69,25717.69,,0,7,0,0,,0,0,0,,Wacht op betaling debiteur
+1,21004743,3333 Demo,3332,Zorgverzekeringswet - 2023-12-01 / 2023-12-31,2024-01-24,2024-02-07,73092.18,73092.18,,0,6,0,0,,0,0,0,,Wacht op betaling debiteur
+2,21004762,3334 Demo,3332,Zorgverzekeringswet - 2023-11-01 / 2023-11-30,2024-01-24,2024-02-07,36.54,36.54,,0,6,0,0,,0,0,0,,Wacht op betaling debiteur
+3,21004841,3335 Demo,3332,Zorgverzekeringswet - 2024-01-01 / 2024-01-31,2024-02-08,2024-02-22,4965.8,4965.8,,0,-9,0,0,,0,0,0,,Niet vervallen
