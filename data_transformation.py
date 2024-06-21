@@ -2,8 +2,21 @@ import pandas as pd
 import re
 
 def mapper(mapping: dict, to_discard: list, df:pd.DataFrame):
-    df = df.rename(columns=mapping).drop(columns=to_discard)
+    # df = df.rename(columns=mapping).drop(columns=to_discard)
+    # return df
+    try:
+        df = df.rename(columns=mapping)
+        for col in to_discard:
+            try:
+                df = df.drop(columns=[col])
+            except KeyError:
+                print(f"Column '{col}' not found in the DataFrame and will be skipped.")
+    except KeyError as e:
+        print(f"Error: {e}")
+        print("Please check the column names in the mapping dictionary and to_discard list.")
     return df
+
+    
     
 
 def extract_substrings(big_string, substring_list):

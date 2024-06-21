@@ -22,7 +22,7 @@ INPUT_PATH = Path("./input_data")
 OUTPUT_PATH = Path("./output_data")
 
 data_analyst = Agent(
-  role='Senior Data Analyst',
+  role='Experienced Data Analyst',
   goal='Analyse accounting data from an input format and figure out which columns can be mapped to a set output format.',
   verbose=True,
   memory=True,
@@ -40,9 +40,8 @@ data_analyst = Agent(
 analyse_output = Task(
   description=(
   """
-  Analyse the following column names: {expected}. 
-  What potential columns from {dataset} could they correspond to? 
-  Give a concise answer only with the potential matches, do not give explanations.
+  Given a set of columns: {expected}. Match the items from the set to a column from this dataset: {dataset}.
+  Give a concise answer only with the potential matches, do not give explanations. 
   """
   ),
   expected_output="Return only the potential matches to the {expected} columns in this format: {format}",
