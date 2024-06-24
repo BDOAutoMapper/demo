@@ -4,10 +4,12 @@ from crewai import Agent, Task, Crew, Process
 from langchain_openai import AzureOpenAI
 from pathlib import Path
 
-#environment variable setup
+# Parse .env and load all variables as environment variables
 load_dotenv()
 
-
+# Initialize an instance of AzureOpenAI for GPT-3.5
+# This setup connects to Azure's OpenAI service using environment variables for secure configuration.
+# Tutorial explanation from CrewAI docs: https://docs.crewai.com/how-to/Creating-a-Crew-and-kick-it-off/#step-1-assemble-your-agents
 GPT35 = AzureOpenAI(
     azure_endpoint=os.environ.get("AZURE_ENDPOINT"),
     openai_api_version="2023-07-01-preview",
@@ -17,7 +19,7 @@ GPT35 = AzureOpenAI(
     max_tokens= -1
 )
 
-# use path variables to define input and output directories
+# Define input and output directories of CrewAI with path objects 
 INPUT_PATH = Path("./input_data")
 OUTPUT_PATH = Path("./output_data")
 
@@ -57,6 +59,8 @@ mapping_crew = Crew(
   process=Process.sequential
 )
 
+# This expected format seems to work on first try. 
+# TO-DO: Explore different ways to receive more structured responses. 
 format = "-->expected_column -->dataset_column"
 
     

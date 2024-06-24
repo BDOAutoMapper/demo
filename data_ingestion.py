@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 INPUT_PATH = Path("./input_data")
+
 VALIDATION_RULES = {
                     "parametres": {
                         "names": ["Debiteurnaam", "Factuurnummer", "Datum", "Bedrag_EUR"],
