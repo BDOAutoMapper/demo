@@ -124,3 +124,38 @@ def transform_nonstandard_SAP(df: pd.DataFrame, new_column_name: str) -> pd.Data
         subset_dfs.append(subset_df)
     sub_df = pd.concat(subset_dfs)
     return sub_df
+
+
+def remove_rows_with_nans(df: pd.DataFrame, threshold: int = 1) -> pd.DataFrame:
+    """
+    Remove rows from a DataFrame if they contain NaN or NaT values in more than 'threshold' columns.
+    
+    Parameters:
+    df (pandas.DataFrame): The input DataFrame
+    threshold (int): The maximum number of columns allowed to have NaN or NaT values. Default is 1.
+    
+    Returns:
+    pandas.DataFrame: A new DataFrame with the specified rows removed
+    """
+    # Count the number of NaN or NaT values in each row
+    nan_counts: pd.Series = df.isna().sum(axis=1)
+    
+    # Keep rows where the count of NaNs/NaTs is less than or equal to the threshold
+    return df[nan_counts <= threshold]
+
+def propagate_value_backwards(series):
+    result = series.copy()
+    last_konto = None
+    for i in range(len(series) - 1, -1, -1):  # Iterate backwards
+        if isinstance(series[i], str) and series[i].startswith('Konto'):
+            last_konto = series[i]
+        elif last_konto is not None:
+            result[i] = last_konto
+        if isinstance(series[i], str) and series[i].startswith('Konto') and series[i] != last_konto:
+            last_konto = None  # Reset when we hit a different Konto value
+    return result
+
+
+# Function to check if a string matches the pattern (e.g., '@5C\Qoffen@')
+def is_pattern(x):
+    return isinstance(x, str) and x.startswith('@') and x.endswith('@')
