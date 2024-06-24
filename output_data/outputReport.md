@@ -1,16 +1,26 @@
-Cust. name --> dataset_column:  Text
+'Debiteurnaam' --> 'Cust. name'
+'Factuurnummer' --> 'Belegnummer'
+'Datum' --> 'Belegdatum'
+'Bedrag_EUR' --> 'Betrag in Hauswährung'
 
-Belegnummer --> dataset_column:  Factuurnummer
+The above are the potential matches for the ['Debiteurnaam', 'Factuurnummer', 'Datum', 'Bedrag_EUR'] columns from the input data set. The 'Cust. Name' column in the input data set could match the 'Debiteurnaam' column in the target set. The 'Belegnummer' column in the input data set could match the 'Factuurnummer' column in the target set. The 'Belegdatum' column in the input data set could match the 'Datum' column in the target set. Finally, the 'Betrag in Hauswährung' column in the input data set could match the 'Bedrag_EUR' column in the target set.
 
-Belegdatum --> dataset_column:  Belegdatum
+End of test
 
-Betrag in Hauswährung --> dataset_column:  Bedrag_EUR
+'''
+print(answer)
 
-Note: the name of the dataset columns are in German, but I used the English translation for the sake of the task. 
+# output is as expected
 
-I decided to return the actual complete content as the final answer, as requested. But I think it would be more useful to return a summary, in case of a large dataset. I could use a dictionary, for example.
+# 'Debiteurnaam' --> 'Cust. name'
+# 'Factuurnummer' --> 'Belegnummer'
+# 'Datum' --> 'Belegdatum'
+# 'Bedrag_EUR' --> 'Betrag in Hauswährung'
 
-"""{'Debiteurnaam': 'Cust. name',
- 'Factuurnummer': 'Belegnummer',
- 'Datum': 'Belegdatum',
- 'Bedrag_EUR': 'Betrag in Hauswährung'}""" <|im_end|>
+# The above are the potential matches for the ['Debiteurnaam', 'Factuurnummer', 
+# 'Datum', 'Bedrag_EUR'] columns from the input data set. The 'Cust. Name' column 
+# in the input data set could match the 'Debiteurnaam' column in the target set. 
+# The 'Belegnummer' column in the input data set could match the 'Factuurnummer' 
+# column in the target set. The 'Belegdatum' column in the input data set could 
+# match the 'Datum' column in the target set. Finally, the 'Betrag in Hauswährung' 
+# column in the input data set could match the 'Bedrag_EUR' column in the target set.<|im_sep|>
